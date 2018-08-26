@@ -37,9 +37,9 @@
                 <div id="menu2" class="nav-box menuhd">
                     <ul>
                         <li class="index">
-                            <a href="#" class="">
+                            <router-link to="/index">
                                 <span class="out" style="top: 0px;">首页</span>
-                            </a>
+                            </router-link>
                         </li>
                         <li class="news">
                             <a href="#" class="">
@@ -78,7 +78,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
+      <!-- 出口 -->
+    <router-view></router-view>
     <div class="footer">
                 <div class="section">
                     <div class="foot-nav">
@@ -114,16 +116,12 @@
 </template>
 
 <script>
-import axios from "axios";
+
 import $ from "jquery";
 
 export default {
   // 这个是方便我们查找元素
-
   name: 'app',
-  // components: {
-  //   HelloWorld
-  // }
 }
 $(document).ready(function() {
 	$("#menu2 li a").wrapInner( '<span class="out"></span>' );
@@ -140,6 +138,10 @@ $(document).ready(function() {
 		$(".over",	this).stop().animate({'top':	'-48px'},	300); // move up - hide
 	});
 })
+
+
+
+
 </script>
 
 <style>
@@ -151,6 +153,7 @@ $(document).ready(function() {
   /* 插件默认背景样式不要 */
   #menu2{
       background-image: none;
+     
   }
 
 </style>
